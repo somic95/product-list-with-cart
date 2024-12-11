@@ -317,7 +317,7 @@ function App() {
                     ${item.price.toFixed(2)}
                   </span>
                   <span className="text-gray-500 text-xs ml-2">
-                    ${Math.round(item.quantity * item.price).toFixed(2)}
+                    ${(item.quantity * item.price).toFixed(2)}
                   </span>
                   <hr className="mt-2 border-t border-gray-300" />
                 </div>
@@ -395,12 +395,12 @@ function App() {
                             ${item.price.toFixed(2)}
                           </span>
                           <span className="text-gray-500 text-xs ml-2">
-                            ${Math.round(item.quantity * item.price).toFixed(2)}
+                            ${(item.quantity * item.price).toFixed(2)}
                           </span>
                           <hr className="mt-2 border-t border-cusrose-200" />
                         </div>
                         <div className="text-black text-xs ml-2">
-                          ${Math.round(item.quantity * item.price).toFixed(2)}
+                          ${(item.quantity * item.price).toFixed(2)}
                         </div>
                       </div>
                     </li>
