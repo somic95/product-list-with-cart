@@ -2,30 +2,39 @@ import React, { useState } from "react";
 import waffleDesktop from "./assets/images/image-waffle-desktop.jpg";
 import waffleMobile from "./assets/images/image-waffle-mobile.jpg";
 import waffleTablet from "./assets/images/image-waffle-tablet.jpg";
+import waffleThumbnail from "./assets/images/image-waffle-thumbnail.jpg";
 import creambruleeDesktop from "./assets/images/image-creme-brulee-desktop.jpg";
 import creambruleeMobile from "./assets/images/image-creme-brulee-mobile.jpg";
 import creambruleeTablet from "./assets/images/image-creme-brulee-tablet.jpg";
+import creambruleeThumbnail from "./assets/images/image-creme-brulee-thumbnail.jpg";
 import macronDesktop from "./assets/images/image-macaron-desktop.jpg";
 import macronMobile from "./assets/images/image-macaron-mobile.jpg";
 import macronTablet from "./assets/images/image-macaron-tablet.jpg";
+import macronThumbnail from "./assets/images/image-macaron-thumbnail.jpg";
 import tiramisuDesktop from "./assets/images/image-tiramisu-desktop.jpg";
 import tiramisuMobile from "./assets/images/image-tiramisu-mobile.jpg";
 import tiramisuTablet from "./assets/images/image-tiramisu-tablet.jpg";
+import tiramisuThumbnail from "./assets/images/image-tiramisu-thumbnail.jpg";
 import baklavaDesktop from "./assets/images/image-baklava-desktop.jpg";
 import baklavaMobile from "./assets/images/image-baklava-mobile.jpg";
 import baklavaTablet from "./assets/images/image-baklava-tablet.jpg";
+import baklavaThumbnail from "./assets/images/image-baklava-thumbnail.jpg";
 import meringueDesktop from "./assets/images/image-meringue-desktop.jpg";
 import meringueMobile from "./assets/images/image-meringue-mobile.jpg";
 import meringueTablet from "./assets/images/image-meringue-tablet.jpg";
+import meringueThumbnail from "./assets/images/image-meringue-thumbnail.jpg";
 import cakeDesktop from "./assets/images/image-cake-desktop.jpg";
 import cakeMobile from "./assets/images/image-cake-mobile.jpg";
 import cakeTablet from "./assets/images/image-cake-tablet.jpg";
+import cakeThumbnail from "./assets/images/image-cake-thumbnail.jpg";
 import brownieDesktop from "./assets/images/image-brownie-desktop.jpg";
 import brownieMobile from "./assets/images/image-brownie-mobile.jpg";
 import brownieTablet from "./assets/images/image-brownie-tablet.jpg";
+import brownieThumbnail from "./assets/images/image-brownie-thumbnail.jpg";
 import pannaCottaDesktop from "./assets/images/image-panna-cotta-desktop.jpg";
 import pannaCottaMobile from "./assets/images/image-panna-cotta-mobile.jpg";
 import pannaCottaTablet from "./assets/images/image-panna-cotta-tablet.jpg";
+import pannaCottaThumbnail from "./assets/images/image-panna-cotta-thumbnail.jpg";
 import cartIcon from "./assets/images/icon-add-to-cart.svg";
 import increQuantity from "./assets/images/icon-increment-quantity.svg";
 import decreQuantity from "./assets/images/icon-decrement-quantity.svg";
@@ -43,6 +52,7 @@ const products = [
       desktop: waffleDesktop,
       mobile: waffleMobile,
       tablet: waffleTablet,
+      thumbnail: waffleThumbnail,
     },
     category: "Waffle",
   },
@@ -54,6 +64,7 @@ const products = [
       desktop: creambruleeDesktop,
       mobile: creambruleeMobile,
       tablet: creambruleeTablet,
+      thumbnail: creambruleeThumbnail,
     },
     category: "Crème Brûlée",
   },
@@ -65,6 +76,7 @@ const products = [
       desktop: macronDesktop,
       mobile: macronMobile,
       tablet: macronTablet,
+      thumbnail: macronThumbnail,
     },
     category: "Macaron",
   },
@@ -76,6 +88,7 @@ const products = [
       desktop: tiramisuDesktop,
       mobile: tiramisuMobile,
       tablet: tiramisuTablet,
+      thumbnail: tiramisuThumbnail,
     },
     category: "Tiramisu",
   },
@@ -87,6 +100,7 @@ const products = [
       desktop: baklavaDesktop,
       mobile: baklavaMobile,
       tablet: baklavaTablet,
+      thumbnail: baklavaThumbnail,
     },
     category: "Baklava",
   },
@@ -98,6 +112,7 @@ const products = [
       desktop: meringueDesktop,
       mobile: meringueMobile,
       tablet: meringueTablet,
+      thumbnail: meringueThumbnail,
     },
     category: "Pie",
   },
@@ -109,6 +124,7 @@ const products = [
       desktop: cakeDesktop,
       mobile: cakeMobile,
       tablet: cakeTablet,
+      thumbnail: cakeThumbnail,
     },
     category: "Cake",
   },
@@ -120,6 +136,7 @@ const products = [
       desktop: brownieDesktop,
       mobile: brownieMobile,
       tablet: brownieTablet,
+      thumbnail: brownieThumbnail,
     },
     category: "Brownie",
   },
@@ -131,6 +148,7 @@ const products = [
       desktop: pannaCottaDesktop,
       mobile: pannaCottaMobile,
       tablet: pannaCottaTablet,
+      thumbnail: pannaCottaThumbnail,
     },
     category: "Panna Cotta",
   },
@@ -337,6 +355,8 @@ function App() {
               Confirm Order
             </button>
           </div>
+
+          {/* modal box */}
           {isModalOpen && (
             <div
               className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -361,7 +381,12 @@ function App() {
                       className="flex justify-between items-center bg-cusrose-100 p-4 "
                     >
                       <div className="w-full flex justify-between items-center">
-                        <div className="w-full">
+                        <img
+                          src={item.image.thumbnail}
+                          alt="confirm-modal-pdt-box"
+                          className="w-1/5 mr-2 rounded"
+                        />
+                        <div className="w-full font-bold">
                           <h4 className="text-xs">{item.name}</h4>
                           <span className="font-bold text-cusred text-xs">
                             {item.quantity}x
