@@ -16,7 +16,7 @@ export default {
         },
       },
       fontFamily: {
-        "red-hat": ['"Red Hat Text"', "sans-serif"], // Add the font family
+        RedHat: ["Red Hat Text", "sans-serif"], // Add the font family
       },
     },
   },
