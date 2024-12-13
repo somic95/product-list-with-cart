@@ -239,7 +239,7 @@ function App() {
                   </picture>
                   <div className="absolute -bottom-7 left-0 right-0 p-2 flex justify-center">
                     {cartItem ? (
-                      <div className="flex items-center space-x-2 mt-4 bg-cusred rounded-full px-1 ">
+                      <div className="flex items-center  space-x-2 mt-4 bg-cusred rounded-full px-1 ">
                         <button
                           className=" text-white px-3 py-1 rounded"
                           onClick={() => removeFromCart(product)}
@@ -267,7 +267,7 @@ function App() {
                         className="mt-4 bg-white text-black border border-cusred  py-2 px-4 rounded-full"
                         onClick={() => addToCart(product)}
                       >
-                        <div className="flex gap-2">
+                        <div className="flex items-center gap-2">
                           <img src={cartIcon} alt="" />
                           <p className="text-xs">Add to Cart</p>
                         </div>
@@ -276,9 +276,9 @@ function App() {
                   </div>
                 </div>
                 <div className="py-4">
-                  <p className="text-gray-400">{product.category}</p>
-                  <h2 className="text-sm font-semibold">{product.name}</h2>
-                  <p className="font-bold text-lg text-cusred">
+                  <p className="text-gray-400 text-xs ">{product.category}</p>
+                  <h2 className="text-xs font-semibold">{product.name}</h2>
+                  <p className="font-bold text-lg text-cusred text-xs">
                     ${product.price.toFixed(2)}
                   </p>
                 </div>
@@ -333,7 +333,7 @@ function App() {
 
           <div className={`${cart.length > 0 ? "" : "hidden"}`}>
             <div className="flex justify-between items-center mt-4">
-              <span className="font-bold text-xs text-gray-500">
+              <span className="font-semibold text-xs text-gray-500">
                 Order Total
               </span>
               <span className="font-bold text-lg">
@@ -344,7 +344,7 @@ function App() {
               <img src={neutralIcon} alt="neutral" />
               <p className="text-gray-500 text-xs">
                 This is a{" "}
-                <span className="text-black font-bold">carbon-neutral</span>{" "}
+                <span className="text-gray-500 font-bold">carbon-neutral</span>{" "}
                 delivery
               </p>
             </div>
